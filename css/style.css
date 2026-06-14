@@ -1,0 +1,946 @@
+/* =========================
+   GOOGLE FONTS
+========================= */
+
+:root{
+    --primary:#B68A35;
+    --secondary:#F8F4EA;
+    --dark:#3B2F2F;
+    --pink:#C45C7A;
+    --peacock:#1E6B6E;
+    --white:#ffffff;
+    --shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--secondary);
+    color:var(--dark);
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.main-navbar{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:92%;
+    z-index:9999;
+}
+
+.nav-wrapper{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:18px 30px;
+
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(182,138,53,.15);
+
+    border-radius:100px;
+
+    box-shadow:var(--shadow);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo span{
+    font-size:24px;
+}
+
+.logo h5{
+    margin:0;
+    color:var(--primary);
+    font-family:'Tiro Devanagari Marathi',serif;
+    font-size:22px;
+    font-weight:600;
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:35px;
+    list-style:none;
+    margin:0;
+}
+
+.nav-menu a{
+    color:var(--dark);
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+
+.nav-menu a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:var(--primary);
+    transition:.4s;
+}
+
+.nav-menu a:hover{
+    color:var(--primary);
+}
+
+.nav-menu a:hover::after{
+    width:100%;
+}
+
+/* Mobile Button */
+
+.menu-toggle{
+    display:none;
+    border:none;
+    background:none;
+    font-size:24px;
+    color:var(--primary);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:280px;
+    height:100vh;
+    background:#fff;
+    z-index:10000;
+    padding:40px 25px;
+    transition:.4s ease;
+    box-shadow:-5px 0 30px rgba(0,0,0,.1);
+}
+
+.mobile-menu.active{
+    right:0;
+}
+
+.close-menu{
+    border:none;
+    background:none;
+    font-size:28px;
+    color:var(--primary);
+    margin-bottom:30px;
+}
+
+.mobile-menu ul{
+    list-style:none;
+    padding:0;
+}
+
+.mobile-menu li{
+    margin-bottom:20px;
+}
+
+.mobile-menu a{
+    color:var(--dark);
+    font-size:18px;
+    font-weight:500;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section{
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+    padding-top:120px;
+
+    background:
+    linear-gradient(
+        rgba(248,244,234,.97),
+        rgba(248,244,234,.97)
+    );
+}
+
+/* Decorative Corners */
+
+.peacock-left,
+.peacock-right{
+    position:absolute;
+    width:250px;
+    opacity:.25;
+    z-index:1;
+}
+
+.peacock-left{
+    top:0;
+    left:0;
+}
+
+.peacock-right{
+    bottom:0;
+    right:0;
+}
+
+/* Content */
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.ganesh-icon{
+    margin-bottom:20px;
+}
+
+.ganesh-icon img{
+    width:80px;
+}
+
+.hero-subtitle{
+    display:block;
+    color:var(--primary);
+    font-weight:600;
+    letter-spacing:1px;
+    margin-bottom:15px;
+}
+
+.wedding-title{
+    font-family:'Tiro Devanagari Marathi',serif;
+    font-size:2.8rem;
+    color:var(--dark);
+    margin-bottom:10px;
+}
+
+.couple-name{
+    font-family:'Tiro Devanagari Marathi',serif;
+    font-size:clamp(3rem,7vw,5.5rem);
+    line-height:1.2;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.couple-name span{
+    color:var(--pink);
+    display:inline-block;
+    margin:0 15px;
+}
+
+.hero-text{
+    font-size:1.2rem;
+    margin-bottom:25px;
+}
+
+.wedding-date{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    background:#fff;
+    padding:14px 25px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(182,138,53,.15);
+
+    margin-bottom:30px;
+
+    box-shadow:var(--shadow);
+}
+
+.wedding-date i{
+    color:var(--primary);
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-wrapper{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:35px;
+}
+
+.count-box{
+    width:90px;
+    height:90px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid rgba(182,138,53,.1);
+}
+
+.count-box span{
+    font-size:28px;
+    font-weight:700;
+    color:var(--primary);
+}
+
+.count-box small{
+    margin-top:5px;
+    font-size:13px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.primary-btn,
+.secondary-btn{
+    padding:15px 30px;
+    border-radius:50px;
+    transition:.4s;
+    font-weight:600;
+}
+
+.primary-btn{
+    background:var(--primary);
+    color:#fff;
+}
+
+.primary-btn:hover{
+    transform:translateY(-4px);
+    color:#fff;
+}
+
+.secondary-btn{
+    border:2px solid var(--primary);
+    color:var(--primary);
+    background:#fff;
+}
+
+.secondary-btn:hover{
+    background:var(--primary);
+    color:#fff;
+}
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero-image{
+    position:relative;
+    z-index:2;
+}
+
+.image-frame{
+    padding:15px;
+    background:#fff;
+    border-radius:30px;
+
+    border:2px solid rgba(182,138,53,.2);
+
+    box-shadow:var(--shadow);
+
+    animation:float 6s ease-in-out infinite;
+}
+
+.image-frame img{
+    border-radius:20px;
+}
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.scroll-indicator{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+}
+
+.scroll-indicator span{
+    display:block;
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.scroll-indicator i{
+    color:var(--primary);
+    animation:bounce 2s infinite;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(10px);
+    }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:991px){
+
+    .nav-menu{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .hero-content{
+        text-align:center;
+        margin-bottom:50px;
+    }
+
+    .countdown-wrapper{
+        justify-content:center;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .ganesh-icon img{
+        margin:auto;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .nav-wrapper{
+        padding:15px 20px;
+    }
+
+    .logo h5{
+        font-size:18px;
+    }
+
+    .wedding-title{
+        font-size:2rem;
+    }
+
+    .couple-name{
+        font-size:2.8rem;
+    }
+
+    .count-box{
+        width:75px;
+        height:75px;
+    }
+
+    .count-box span{
+        font-size:22px;
+    }
+
+}
+
+
+.couple-section{
+    padding:120px 0;
+    background:#fffdf8;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title span{
+    color:#b68a35;
+    font-size:18px;
+    font-weight:600;
+}
+
+.section-title h2{
+    font-size:48px;
+    margin-top:10px;
+    color:#3b2f2f;
+    font-family:'Tiro Devanagari Marathi', serif;
+}
+
+.couple-card{
+    background:#fff;
+    border-radius:30px;
+    overflow:hidden;
+    text-align:center;
+    padding-bottom:30px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.08);
+
+    transition:.4s;
+}
+
+.couple-card:hover{
+    transform:translateY(-10px);
+}
+
+.couple-image{
+    height:500px;
+    overflow:hidden;
+}
+
+.couple-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.couple-info{
+    padding:30px;
+}
+
+.couple-info h3{
+    color:#b68a35;
+    font-size:38px;
+    margin-bottom:15px;
+    font-family:'Tiro Devanagari Marathi', serif;
+}
+
+.couple-info p{
+    margin-bottom:10px;
+    line-height:1.8;
+}
+
+.gold-divider{
+    text-align:center;
+    margin-top:15px;
+    position:relative;
+}
+
+.gold-divider::before,
+.gold-divider::after{
+    content:'';
+    width:80px;
+    height:1px;
+    background:#b68a35;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.gold-divider::before{
+    margin-right:15px;
+}
+
+.gold-divider::after{
+    margin-left:15px;
+}
+
+.gold-divider i{
+    color:#b68a35;
+    font-size:20px;
+}
+
+.haldi-section{
+    padding:120px 0;
+    background:
+    linear-gradient(
+        rgba(255,248,220,.95),
+        rgba(255,248,220,.95)
+    );
+}
+
+.haldi-image{
+    overflow:hidden;
+    border-radius:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.haldi-image img{
+    width:100%;
+    border-radius:30px;
+    transition:.5s;
+}
+
+.haldi-image:hover img{
+    transform:scale(1.05);
+}
+
+.haldi-card{
+    background:#fff;
+
+    padding:50px;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.08);
+
+    text-align:center;
+
+    border:2px solid rgba(182,138,53,.15);
+}
+
+.haldi-card h3{
+    color:#b68a35;
+    font-size:38px;
+    margin-bottom:20px;
+    font-family:'Tiro Devanagari Marathi', serif;
+}
+
+.haldi-card h4{
+    color:#3b2f2f;
+    margin-bottom:15px;
+}
+
+.haldi-card p{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+/* ==========================
+   VIVAH SECTION
+========================== */
+
+.vivah-section{
+    padding:120px 0;
+    background:
+    linear-gradient(
+        180deg,
+        #fff,
+        #f8f4ea
+    );
+}
+
+.wedding-card{
+    background:#fff;
+
+    padding:60px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    border:2px solid rgba(182,138,53,.15);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.08);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.wedding-card::before{
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:6px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #B68A35,
+        #D4AF37,
+        #B68A35
+    );
+}
+
+.wedding-icon{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.wedding-card h3{
+    font-size:42px;
+    color:#B68A35;
+    margin-bottom:35px;
+    font-family:'Tiro Devanagari Marathi', serif;
+}
+
+/* ==========================
+   DATE INFO
+========================== */
+
+.wedding-date{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+
+    margin-bottom:40px;
+}
+
+.date-item{
+    background:#fff8e7;
+
+    padding:15px 25px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    color:#3b2f2f;
+
+    border:1px solid rgba(182,138,53,.2);
+}
+
+.date-item i{
+    color:#B68A35;
+    margin-right:8px;
+}
+
+/* ==========================
+   VENUE
+========================== */
+
+.venue-box{
+    background:#fafafa;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    margin-bottom:35px;
+}
+
+.venue-box h4{
+    color:#B68A35;
+    margin-bottom:15px;
+}
+
+.venue-box p{
+    line-height:2;
+    margin:0;
+}
+
+/* ==========================
+   MESSAGE
+========================== */
+
+.wedding-message{
+    font-size:20px;
+    line-height:1.9;
+    color:#555;
+
+    margin-bottom:35px;
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.map-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    background:#B68A35;
+
+    color:#fff;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    transition:.4s;
+}
+
+.map-btn:hover{
+    background:#9d7428;
+    color:#fff;
+    transform:translateY(-5px);
+}
+
+
+.blessings-section{
+    padding:120px 0;
+    background:#fffdf8;
+}
+
+.blessings-card{
+    max-width:850px;
+    margin:auto;
+
+    background:#fff;
+
+    padding:60px 40px;
+
+    text-align:center;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.08);
+
+    border:1px solid rgba(182,138,53,.15);
+}
+
+.quote-icon{
+    font-size:60px;
+    color:#B68A35;
+    margin-bottom:-20px;
+}
+
+.blessings-card p{
+    font-size:20px;
+    line-height:2;
+    color:#555;
+}
+
+.blessings-card h4{
+    margin-top:30px;
+    color:#B68A35;
+    font-family:'Tiro Devanagari Marathi', serif;
+}
+
+.footer-section{
+    background:#B68A35;
+    color:#fff;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.footer-section h4{
+    margin-bottom:15px;
+}
+
+.footer-section p{
+    margin-bottom:10px;
+}
+
+.footer-section span{
+    font-size:18px;
+}
+
+.wedding-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.wedding-icon img{
+    width: 120px; /* Adjust as needed */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.haldi-title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+
+    font-family:'Tiro Devanagari Marathi', serif;
+    font-size:38px;
+    color:#b68a35;
+    margin-bottom:20px;
+    text-align:center;
+    flex-wrap:wrap;
+}
+
+.haldi-title span{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.haldi-title span img{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+}
+
+@media (max-width: 576px){
+
+    .haldi-title{
+        font-size:28px;
+        gap:10px;
+    }
+
+    .haldi-title span img{
+        width:28px;
+        height:28px;
+    }
+
+}
+
+.haldi-title span img{
+    width:40px;
+    animation: flowerFloat 3s ease-in-out infinite;
+}
+
+@keyframes flowerFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-5px);
+    }
+}
